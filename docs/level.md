@@ -5,7 +5,7 @@ typically a Scene that contains animated Entities, we are going to extend a
 `DynamicScene`.
 
 ![Edit](images/edit.png) Add a scene called `GameLevel`, which extends
-`DynamicScene`, to the `com.github.hanyaeger.tutorial.scenes`
+`DynamicScene`, to the `com.github.hanyaeger.tutorial.scenes.GameLevel`
 package. Use the method `setupScene()` to set the background to the
 asset `background2.jpg` and the audio to `waterworld.mp3`.
 
