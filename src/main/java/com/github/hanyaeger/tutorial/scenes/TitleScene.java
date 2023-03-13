@@ -1,9 +1,10 @@
-package com.github.hanyaeger.tutorial;
+package com.github.hanyaeger.tutorial.scenes;
 
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.StaticScene;
+import com.github.hanyaeger.tutorial.Waterworld;
 import com.github.hanyaeger.tutorial.entities.buttons.StartButton;
 import javafx.scene.Cursor;
 import javafx.scene.paint.Color;
@@ -29,12 +30,17 @@ public class TitleScene extends StaticScene {
                 new Coordinate2D(getWidth() / 2, getHeight() / 2),
                 "Waterworld"
         );
+        var waterworldButton = new StartButton(
+                new Coordinate2D(getWidth() / 2, getHeight()/ 3 * 2),
+                waterworld
+        );
         waterworldText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
         waterworldText.setFill(Color.DARKBLUE);
         waterworldText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 80));
         addEntity(waterworldText);
+        addEntity(waterworldButton);
 
-        var startButton = new StartButton(new Coordinate2D(getWidth() / 2, getHeight() /3 * 2), this);
+
     }
 
     @Override
