@@ -5,6 +5,7 @@ import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.tutorial.entities.Hanny;
 import com.github.hanyaeger.tutorial.entities.Swordfish;
 import com.github.hanyaeger.tutorial.entities.buttons.StartButton;
+import com.github.hanyaeger.tutorial.entities.text.HealthText;
 import javafx.scene.Cursor;
 
 public class GameLevel extends DynamicScene {
@@ -17,10 +18,13 @@ public class GameLevel extends DynamicScene {
     @Override
     public void setupEntities() {
         var swordfish = new Swordfish(
-                new Coordinate2D(getWidth() / 2, getHeight()/ 3 * 2)
+                new Coordinate2D(getWidth() / 2, getHeight() / 3 * 2)
         );
         var hanny = new Hanny(
-                new Coordinate2D(getWidth() / 2, getHeight() /2)
+                new Coordinate2D(getWidth() / 2, getHeight() / 2)
+        );
+        var hannyHealth = new HealthText(
+                new Coordinate2D(getWidth(), getHeight())
         );
         addEntity(swordfish);
         addEntity(hanny);
