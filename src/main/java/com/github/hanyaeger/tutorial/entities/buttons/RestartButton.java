@@ -25,7 +25,7 @@ public class RestartButton extends TextEntity implements MouseButtonPressedListe
 
     @Override
     public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D){
-        waterworld.setActiveScene(2);
+        waterworld.setActiveScene(0);
     }
 
     @Override

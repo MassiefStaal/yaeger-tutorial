@@ -72,16 +72,23 @@ public class Hanny extends DynamicSpriteEntity implements KeyListener, SceneBord
     }
 
     @Override
-    public void onCollision(Collider collidingObject){
+    public void onCollision(Collider collidingObject) {
         setAnchorLocation(new Coordinate2D(
-                new Random().nextInt((int)(getSceneWidth()-getWidth())),
-                new Random().nextInt((int)(getSceneHeight()-getHeight())))
+                new Random().nextInt((int) (getSceneWidth() - getWidth())),
+                new Random().nextInt((int) (getSceneHeight() - getHeight())))
         );
 
         health--;
         healthText.setHealthText(health);
+        if(health == 0){
+            boolean isdood = true;
+        }
 
-            }
+    }
+
+    public int getHannyHealth(){
+        return health;
+    }
 }
 
 
