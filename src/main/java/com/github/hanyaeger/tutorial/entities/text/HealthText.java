@@ -12,8 +12,7 @@ public class HealthText extends TextEntity {
     public HealthText(Coordinate2D initialLocation){
         super(initialLocation);
 
-
-        setFont(Font.font("Roboto", FontWeight.NORMAL, 30));
+        setFont(Font.font("Roboto",FontWeight.NORMAL, 30));
         setFill(Color.DARKBLUE);
     }
 

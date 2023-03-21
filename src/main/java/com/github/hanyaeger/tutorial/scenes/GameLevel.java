@@ -20,14 +20,15 @@ public class GameLevel extends DynamicScene {
         var swordfish = new Swordfish(
                 new Coordinate2D(getWidth() / 2, getHeight() / 3 * 2)
         );
-        var hanny = new Hanny(
-                new Coordinate2D(getWidth() / 2, getHeight() / 2)
-        );
         var hannyHealth = new HealthText(
                 new Coordinate2D(getWidth(), getHeight())
         );
+        var hanny = new Hanny(
+                new Coordinate2D(getWidth() / 2, getHeight() / 2), hannyHealth
+        );
         addEntity(swordfish);
         addEntity(hanny);
+        addEntity(hannyHealth);
     }
 
     @Override

@@ -21,7 +21,7 @@ public class Hanny extends DynamicSpriteEntity implements KeyListener, SceneBord
     private int health = 10;
 
     public Hanny(Coordinate2D location, HealthText healthText){
-        super("sprites/hanny.png", location, new Size(20,40), 2);
+        super("sprites/hanny.png", location, new Size(20,40), 1, 2);
 
         this.healthText = healthText;
         healthText.setHealthText(health);
@@ -73,11 +73,15 @@ public class Hanny extends DynamicSpriteEntity implements KeyListener, SceneBord
 
     @Override
     public void onCollision(Collider collidingObject){
-        setAnchorLocation(
-                new Coordinate2D(new Random().nextInt((int)(getSceneWidth()
-                        - getWidth())),
-                        new Random().nextInt((int)(getSceneHeight() - getHeight())))
+        setAnchorLocation(new Coordinate2D(
+                new Random().nextInt((int)(getSceneWidth()-getWidth())),
+                new Random().nextInt((int)(getSceneHeight()-getHeight())))
         );
-    }
 
+        health--;
+        healthText.setHealthText(health);
+
+            }
 }
+
+
