@@ -18,7 +18,7 @@ import java.util.Set;
 public class Hanny extends DynamicSpriteEntity implements KeyListener, SceneBorderTouchingWatcher, Newtonian, Collided, Collider {
 
     private HealthText healthText;
-    private int health = 10;
+    private int health = 1;
 
     public Hanny(Coordinate2D location, HealthText healthText){
         super("sprites/hanny.png", location, new Size(20,40), 1, 2);
@@ -80,9 +80,6 @@ public class Hanny extends DynamicSpriteEntity implements KeyListener, SceneBord
 
         health--;
         healthText.setHealthText(health);
-        if(health == 0){
-            boolean isdood = true;
-        }
 
     }
 
