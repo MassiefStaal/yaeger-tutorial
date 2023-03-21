@@ -24,7 +24,7 @@ public class Waterworld extends YaegerGame {
     public void setupScenes() {
         addScene(0, new TitleScene(this));
         addScene(1, new GameLevel());
-        addScene(2, new EndScene());
+        addScene(2, new EndScene(this));
     }
 
 
