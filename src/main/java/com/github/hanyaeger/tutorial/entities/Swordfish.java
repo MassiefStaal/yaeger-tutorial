@@ -25,5 +25,6 @@ public class Swordfish extends DynamicSpriteEntity implements SceneBorderCrossin
     @Override
     public void onCollision(Collider collider) {
         System.out.println("Collision!");
+
     }
 }

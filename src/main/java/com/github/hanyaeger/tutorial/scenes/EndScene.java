@@ -5,6 +5,7 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.StaticScene;
 import com.github.hanyaeger.tutorial.Waterworld;
+import com.github.hanyaeger.tutorial.entities.buttons.RestartButton;
 import com.github.hanyaeger.tutorial.entities.buttons.StartButton;
 import javafx.scene.Cursor;
 import javafx.scene.paint.Color;
@@ -26,7 +27,7 @@ public class EndScene extends StaticScene {
 
     @Override
     public void setupEntities(){
-        var waterworldButton = new StartButton(
+        var waterworldButton = new RestartButton(
                 new Coordinate2D(getWidth() / 2, getHeight()/ 3 * 2),
                 waterworld
         );

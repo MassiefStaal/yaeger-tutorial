@@ -9,6 +9,7 @@ import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
+import com.github.hanyaeger.tutorial.Waterworld;
 import com.github.hanyaeger.tutorial.entities.text.HealthText;
 import javafx.scene.input.KeyCode;
 
@@ -16,13 +17,12 @@ import java.util.Random;
 import java.util.Set;
 
 public class Hanny extends DynamicSpriteEntity implements KeyListener, SceneBorderTouchingWatcher, Newtonian, Collided, Collider {
-
+    public boolean isDood;
     private HealthText healthText;
-    private int health = 1;
+    private int health = 5;
 
     public Hanny(Coordinate2D location, HealthText healthText){
         super("sprites/hanny.png", location, new Size(20,40), 1, 2);
-
         this.healthText = healthText;
         healthText.setHealthText(health);
 
@@ -80,12 +80,18 @@ public class Hanny extends DynamicSpriteEntity implements KeyListener, SceneBord
 
         health--;
         healthText.setHealthText(health);
-
+        if(health == 0){
+            System.out.println("oma");
+            isDood = true;
+        } else {
+            isDood = false;
+        }
     }
 
     public int getHannyHealth(){
         return health;
     }
 }
+
 
 
