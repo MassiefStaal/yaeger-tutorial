@@ -17,12 +17,14 @@ import java.util.Random;
 import java.util.Set;
 
 public class Hanny extends DynamicSpriteEntity implements KeyListener, SceneBorderTouchingWatcher, Newtonian, Collided, Collider {
+    private Waterworld waterworld;
     public boolean isDood;
     private HealthText healthText;
     private int health = 5;
 
-    public Hanny(Coordinate2D location, HealthText healthText){
+    public Hanny(Coordinate2D location, HealthText healthText, Waterworld waterworld){
         super("sprites/hanny.png", location, new Size(20,40), 1, 2);
+        this.waterworld = waterworld;
         this.healthText = healthText;
         healthText.setHealthText(health);
 
@@ -81,10 +83,7 @@ public class Hanny extends DynamicSpriteEntity implements KeyListener, SceneBord
         health--;
         healthText.setHealthText(health);
         if(health == 0){
-            System.out.println("oma");
-            isDood = true;
-        } else {
-            isDood = false;
+            waterworld.setActiveScene(2);
         }
     }
 
