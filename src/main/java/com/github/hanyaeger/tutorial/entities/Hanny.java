@@ -17,9 +17,9 @@ import java.util.Random;
 import java.util.Set;
 
 public class Hanny extends DynamicSpriteEntity implements KeyListener, SceneBorderTouchingWatcher, Newtonian, Collided, Collider {
-    private Waterworld waterworld;
-    public boolean isDood;
-    private HealthText healthText;
+    private final Waterworld waterworld;
+
+    private final HealthText healthText;
     private int health = 5;
 
     public Hanny(Coordinate2D location, HealthText healthText, Waterworld waterworld){
@@ -85,10 +85,6 @@ public class Hanny extends DynamicSpriteEntity implements KeyListener, SceneBord
         if(health == 0){
             waterworld.setActiveScene(2);
         }
-    }
-
-    public int getHannyHealth(){
-        return health;
     }
 }
 
